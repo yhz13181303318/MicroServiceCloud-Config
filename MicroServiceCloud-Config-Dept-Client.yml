@@ -25,27 +25,24 @@ mybatis:
   type-aliases-package: com.yss.Entity    # 所有Entity别名类所在包
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
-  
-    
+
 eureka:
-  client:                           #客户端注册金服务列表
+  client:                                                   #客户端注册金服务列表
     server-url: 
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
   instance: 
     instance-id: dept-8001.com
     prefer-ip-address: true
     
 info:                                                      #主要是点击超链接的时候，不在出现error页面，显示每个服务的详细信息
- 
   app.name: microservicecloud
   company.name: www.yss.com
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
   
 ---
-
 server:
-  port: 8001        #注册中心占用7001端口，冒号后面必须有空格  
+  port: 8001            
 spring:
   profiles: test     #测试环境
   application:
@@ -71,7 +68,7 @@ mybatis:
 eureka:
   client:                           #客户端注册金服务列表
     server-url: 
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
   instance: 
     instance-id: dept-8001.com
     prefer-ip-address: true
