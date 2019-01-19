@@ -21,7 +21,7 @@ eureka:
     register-with-eureka: false     #当前的eureka自己不注册到注册中心
     fetch-registry: false           #不通过eureka获取注册中心
     server-url: 
-      defaultZone: http://eureka-7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
       
 ---
 server:
@@ -40,7 +40,7 @@ eureka:
     register-with-eureka: false     #当前的eureka自己不注册到注册中心
     fetch-registry: false           #不通过eureka获取注册中心
     server-url: 
-      defaultZone: http://eureka-7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
 
     
 #每次修改的时候切记保存为UTF-8，要不然上传到GitHub会乱码
