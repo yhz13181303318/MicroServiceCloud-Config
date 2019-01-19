@@ -1,0 +1,16 @@
+﻿spring:
+  profiles:
+    actives:
+    - dev 
+---
+spring:
+  profiles: dev     #开发环境
+  application:
+    name: MicroServiceCloud-Config-yss-dev
+---
+spring:
+  profiles: test    #测试环境
+  application: 
+    name: MicroServiceCloud-Config-yss-test
+    
+#每次修改的时候切记保存为UTF-8，要不然上传到GitHub会乱码
