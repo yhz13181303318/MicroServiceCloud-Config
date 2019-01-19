@@ -9,7 +9,7 @@ spring:
     name: MicroServiceCloud-Config-Erueka-Client
     
 server: 
-  port: 7001
+  port: 9001
  
 eureka:                                   # 关闭eureka自动保护功能(server:enable-self-preservation: false)
   instance: 
@@ -27,7 +27,7 @@ spring:
     name: MicroServiceCloud-Config-Erueka-Client
     
 server: 
-  port: 7001
+  port: 9001
  
 eureka:                                   # 关闭eureka自动保护功能(server:enable-self-preservation: false)
   instance: 
