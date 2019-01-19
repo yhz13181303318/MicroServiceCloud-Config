@@ -1,27 +1,24 @@
-﻿spring:
-  profiles:
-    actives:
+﻿spring: 
+  profiles: 
+    actives: 
     - dev 
 ---
-
-server:
+server: 
   port: 7001        #注册中心占用7001端口，冒号后面必须有空格
-  
-  
-spring:
+ 
+spring: 
   profiles: dev     #开发环境
-  application:
+  application: 
     name: MicroServiceCloud-Config-Erueka-Client
     
-    
-eureka:
-  instance:
+eureka: 
+  instance: 
     hostname: eureka7001.com
-  client:
+  client: 
     register-with-eureka: false     #当前的eureka自己不注册到注册中心
     fetch-registry: false           #不通过eureka获取注册中心
     server-url: 
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
       
 ---
 server:
@@ -32,7 +29,6 @@ spring:
   application:
     name: MicroServiceCloud-Config-Erueka-Client
     
-    
 eureka:
   instance:
     hostname: eureka7001.com
@@ -40,7 +36,7 @@ eureka:
     register-with-eureka: false     #当前的eureka自己不注册到注册中心
     fetch-registry: false           #不通过eureka获取注册中心
     server-url: 
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
 
     
 #每次修改的时候切记保存为UTF-8，要不然上传到GitHub会乱码
