@@ -62,8 +62,8 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      # oracle驱动包
     url: jdbc:oracle:thin:@localhost:1521:orcl              # 数据库名称
-    username: jxrisk
-    password: jxrisk
+    username: big_date
+    password: big_date
     dbcp2: 
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
