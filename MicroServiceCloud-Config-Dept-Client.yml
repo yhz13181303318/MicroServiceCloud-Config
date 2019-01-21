@@ -14,7 +14,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 spring: 
-   profiles: dev     #开发环境
+   profiles: dev                                            #开发环境
    application: 
     name: MicroServiceCloud-Config-Dept-Client              #部署到註冊中心的名字，對外暴露的地址
    datasource: 
@@ -55,7 +55,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 spring: 
-   profiles: test     #测试环境
+   profiles: test                                           #测试环境
    application: 
     name: MicroServiceCloud-Config-Dept-Client              #部署到註冊中心的名字，對外暴露的地址
    datasource: 
