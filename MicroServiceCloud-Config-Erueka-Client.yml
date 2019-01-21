@@ -5,8 +5,8 @@
 ---
 spring: 
   profiles: dev     #开发环境
-  application: 
-    name: MicroServiceCloud-Config-Erueka-Client
+  #application: 
+    #name: MicroServiceCloud-Config-Erueka-Client
     
 server: 
   port: 9001
@@ -23,8 +23,8 @@ eureka:                                   #关闭eureka自动保护功能(server
 ---  
 spring: 
   profiles: test     #测试环境
-  application:
-    name: MicroServiceCloud-Config-Erueka-Client
+  #application:
+    #name: MicroServiceCloud-Config-Erueka-Client
     
 server: 
   port: 9001
