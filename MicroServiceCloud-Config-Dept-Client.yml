@@ -4,7 +4,8 @@
     - dev 
 ---
 server:
-  port: 8001         
+  port: 8001  
+  
 spring:
   profiles: dev     #开发环境
   application:
@@ -20,6 +21,7 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+      
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
   type-aliases-package: com.yss.Entity    # 所有Entity别名类所在包
@@ -29,7 +31,7 @@ mybatis:
 eureka:
   client:                                                   #客户端注册金服务列表
     server-url: 
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:9001/eureka/
   instance: 
     instance-id: dept-8001.com
     prefer-ip-address: true
@@ -68,7 +70,7 @@ mybatis:
 eureka:
   client:                           #客户端注册金服务列表
     server-url: 
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:9001/eureka/
   instance: 
     instance-id: dept-8001.com
     prefer-ip-address: true
