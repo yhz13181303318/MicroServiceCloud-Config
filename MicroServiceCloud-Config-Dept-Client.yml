@@ -3,77 +3,80 @@
     actives:
     - dev 
 ---
-server:
-  port: 8001  
+
+server: 
+  port: 8001
   
-spring:
-  profiles: dev     #开发环境
-  application:
-    name: MicroServiceCloud-Config-Dept-Client
-  datasource:
+mybatis: 
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.yss.Entity    # 所有Entity别名类所在包
+  mapper-locations: 
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    
+spring: 
+   profiles: dev     #开发环境
+   application: 
+    name: MicroServiceCloud-Config-Dept-Client              #部署到註冊中心的名字，對外暴露的地址
+   datasource: 
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      # oracle驱动包
     url: jdbc:oracle:thin:@localhost:1521:orcl              # 数据库名称
     username: jxrisk
     password: jxrisk
-    dbcp2:
+    dbcp2: 
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-      
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.yss.Entity    # 所有Entity别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
-eureka:
-  client:                                                   #客户端注册金服务列表
-    server-url: 
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
       defaultZone: http://eureka7001.com:9001/eureka/
   instance: 
-    instance-id: dept-8001.com
-    prefer-ip-address: true
+    instance-id: dept-8001.com                             # 自定义注册到服务注册中心的名称
+    prefer-ip-address: true     						   # 访问路径可以显示IP地址
     
-info:                                                      #主要是点击超链接的时候，不在出现error页面，显示每个服务的详细信息
+info:                                                      # 主要是点击超链接的时候，不在出现error页面，显示每个服务的详细信息
   app.name: microservicecloud
   company.name: www.yss.com
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
   
 ---
-server:
-  port: 8001            
-spring:
-  profiles: test     #测试环境
-  application:
-    name: MicroServiceCloud-Config-Dept-Client
-  datasource:
+
+server: 
+  port: 8001
+  
+mybatis: 
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.yss.Entity    # 所有Entity别名类所在包
+  mapper-locations: 
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    
+spring: 
+   profiles: test     #测试环境
+   application: 
+    name: MicroServiceCloud-Config-Dept-Client              #部署到註冊中心的名字，對外暴露的地址
+   datasource: 
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      # oracle驱动包
     url: jdbc:oracle:thin:@localhost:1521:orcl              # 数据库名称
     username: jxrisk
     password: jxrisk
-    dbcp2:
+    dbcp2: 
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.yss.Entity    # 所有Entity别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
-  
-    
-eureka:
-  client:                           #客户端注册金服务列表
-    server-url: 
+
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
       defaultZone: http://eureka7001.com:9001/eureka/
   instance: 
-    instance-id: dept-8001.com
-    prefer-ip-address: true
+    instance-id: dept-8001.com                             # 自定义注册到服务注册中心的名称
+    prefer-ip-address: true     						   # 访问路径可以显示IP地址
     
 info:                                                      # 主要是点击超链接的时候，不在出现error页面，显示每个服务的详细信息
   app.name: microservicecloud
